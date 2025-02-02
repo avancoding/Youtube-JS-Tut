@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <script>
+          const product = {
+            name: 'Shoes',
+            price: 100,
+            inventory: 10
+          }
+
+          console.log(product);
+          console.log(product.name);
+          console.log(product.price);
+
+          product.price = 200;
+          console.log(product.price);
+
+          product.newInventory = 20;
+         //onsole.log(product);
+
+          console.log(JSON.stringify(product));
+
+          const jsonString = JSON.stringify(product);
+          console.log(JSON.parse(jsonString));
+
+          localStorage.setItem('product', JSON.stringify(product)); //local storage can only take strings. so we change it into an json string using JSON.stringify()
+
+          console.log(localStorage.getItem('product')); //we get the product from local storage and convert it back to an object using JSON.parse()
+          const retrievedProduct = JSON.parse(localStorage.getItem('product'));
+          console.log(retrievedProduct); //we log the product to console
+
+          
+          </script>
+    </body>
+</html>
+
+
+
+
+
